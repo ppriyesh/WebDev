@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CREDIFY — Profile</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="logo-removebg-preview.png" sizes="20x20" type="image/png">
+
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <a href="index.html"><img src="logo-removebg-preview.png" alt="logo" style="height:26px"></a>
+      <a href="index.html">Home</a>
+      <a href="calculate1.html">Calculate Score</a>
+      <a href="profile.html">LeaderBoard</a>
+      <a href="brands.html">For Brands</a>
+      <a href="about.html">About Us</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2>LeaderBoard</h2>
+    <p class="lead">This is the public creator profile brands will see — with your Credify score, badge and summary.</p>
+
+    <!-- Kylie Jenner -->
+<article class="profile-card">
+  <div class="profile-left">
+    <img class="avatar" src="celeb/Kylie.webp" alt="Kylie Jenner avatar">
+    <div style="font-size:.9rem;color:var(--muted)">Badge:</div>
+    <img src="images/badge.jpg" alt="badge" style="width:40px;border-radius:8px">
+  </div>
+
+  <div class="profile-right">
+    <h3>Kylie Jenner</h3>
+    <p>Beauty & Lifestyle Creator · 400M followers</p>
+    <p style="margin-bottom:10px">Score: <strong style="color:var(--primary)">980</strong> / 1000 — <span style="color:var(--secondary);font-weight:700">Elite</span></p>
+
+    <p class="lead" style="text-align:left;font-size:.96rem">
+      Entrepreneur and founder of Kylie Cosmetics, Kylie shares beauty, fashion, and lifestyle content with one of the largest audiences on Instagram.
+    </p>
+
+    <div style="margin-top:12px">
+      <button id="verifyBtn" class="btn">Request Verification</button>
+      <a class="btn secondary" href="calculate.html" style="margin-left:8px">Recalculate Score</a>
+    </div>
+  </div>
+</article>
+
+<!-- Cristiano Ronaldo -->
+<article class="profile-card">
+  <div class="profile-left">
+    <img class="avatar" src="celeb/cristiano.webp" alt="Cristiano Ronaldo avatar">
+    <div style="font-size:.9rem;color:var(--muted)">Badge:</div>
+    <img src="images/badge.jpg" alt="badge" style="width:40px;border-radius:8px">
+  </div>
+
+  <div class="profile-right">
+    <h3>Cristiano Ronaldo</h3>
+    <p>Football Legend · 620M followers</p>
+    <p style="margin-bottom:10px">Score: <strong style="color:var(--primary)">995</strong> / 1000 — <span style="color:var(--secondary);font-weight:700">Legend</span></p>
+
+    <p class="lead" style="text-align:left;font-size:.96rem">
+      One of the most famous athletes in the world, Cristiano shares football highlights, training insights, and lifestyle content with his massive global fanbase.
+    </p>
+
+    <div style="margin-top:12px">
+      <button id="verifyBtn" class="btn">Request Verification</button>
+      <a class="btn secondary" href="calculate.html" style="margin-left:8px">Recalculate Score</a>
+    </div>
+  </div>
+</article>
+
+<!-- Lionel Messi -->
+<article class="profile-card">
+  <div class="profile-left">
+    <img class="avatar" src="celeb/leo.webp" alt="Lionel Messi avatar">
+    <div style="font-size:.9rem;color:var(--muted)">Badge:</div>
+    <img src="images/badge.jpg" alt="badge" style="width:40px;border-radius:8px">
+  </div>
+
+  <div class="profile-right">
+    <h3>Lionel Messi</h3>
+    <p>Football Icon · 490M followers</p>
+    <p style="margin-bottom:10px">Score: <strong style="color:var(--primary)">990</strong> / 1000 — <span style="color:var(--secondary);font-weight:700">Legend</span></p>
+
+    <p class="lead" style="text-align:left;font-size:.96rem">
+      Widely regarded as one of the greatest footballers of all time, Messi shares career moments, behind-the-scenes stories, and family life with millions.
+    </p>
+
+    <div style="margin-top:12px">
+      <button id="verifyBtn" class="btn">Request Verification</button>
+      <a class="btn secondary" href="calculate.html" style="margin-left:8px">Recalculate Score</a>
+    </div>
+  </div>
+</article>
+
+
+    <div class="nav-row">
+      <a class="btn secondary" href="calculate.html">← Previous</a>
+      <a class="btn" href="brands.html">Next →</a>
+    </div>
+  </main>
+
+  <!-- modal -->
+  <div id="verifyModal" class="modal" role="dialog" aria-hidden="true">
+    <div class="modal-box">
+      <div class="modal-title">Request Verification</div>
+      <div class="modal-text">Verification requests are reviewed by our team. Submitting a request will add your profile to the verification queue. Continue?</div>
+      <div class="modal-actions">
+        <button id="cancelVerify" class="btn secondary">Cancel</button>
+        <button id="confirmVerify" class="btn">Yes, Request</button>
+      </div>
+    </div>
+  </div>
+
+  
+ <button onclick="readEntirePage()" style="padding:10px 20px;background:#0F4C81;color:white;border:none;border-radius:6px;font-size:16px;font-weight:bold;margin-right:8px;">
+  🔊 Read Page
+</button>
+<button onclick="pauseSpeech()" style="padding:10px 20px;background:#555;color:white;border:none;border-radius:6px;font-size:16px;font-weight:bold;margin-right:8px;">
+  ⏸ Pause
+</button>
+<button onclick="resumeSpeech()" style="padding:10px 20px;background:#0A7D2A;color:white;border:none;border-radius:6px;font-size:16px;font-weight:bold;margin-right:8px;">
+  ▶ Resume
+</button>
+<button onclick="stopSpeech()" style="padding:10px 20px;background:#B22222;color:white;border:none;border-radius:6px;font-size:16px;font-weight:bold;">
+  ⏹ Stop
+</button>
+<footer class="footer">
+    <small>© 2025 CREDIFY — Trust. Transparency. Empowerment.</small>
+  </footer>
+<script>
+  let speech;
+
+  function readEntirePage() {
+    let text = document.body.innerText;
+    window.speechSynthesis.cancel(); // Stop any ongoing speech
+
+    speech = new SpeechSynthesisUtterance(text);
+    speech.lang = "en-US";
+    speech.rate = 1;
+    speech.pitch = 1;
+
+    window.speechSynthesis.speak(speech);
+  }
+
+  function pauseSpeech() {
+    if (window.speechSynthesis.speaking && !window.speechSynthesis.paused) {
+      window.speechSynthesis.pause();
+    }
+  }
+
+  function resumeSpeech() {
+    if (window.speechSynthesis.paused) {
+      window.speechSynthesis.resume();
+    }
+  }
+
+  function stopSpeech() {
+    window.speechSynthesis.cancel();
+  }
+</script>
+
+  <script src="profile.js" defer></script>
+</body>
+</html>
+

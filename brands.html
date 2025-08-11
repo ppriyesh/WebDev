@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CREDIFY — For Brands</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="logo-removebg-preview.png" sizes="20x20" type="image/png">
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <a href="index.html"><img src="logo-removebg-preview.png" alt="logo" style="height:26px"></a>
+      <a href="index.html">Home</a>
+      <a href="calculate1.html">Calculate Score</a>
+      <a href="profile.html">LeaderBoard</a>
+      <a href="brands.html">For Brands</a>
+      <a href="about.html">About Us</a>
+    </nav>
+  </header>
+
+  <div class="data" style="height: 40vh;width:100%;background:black;color:white;display:flex;flex-direction:column;align-items:left">
+    <div style="padding:70px">
+      <h1>Why use CREDIFY?</h1>
+      <p class="lead">Credify helps brands find the right creators by providing a transparent, data-driven credibility score based on real engagement metrics.</p>
+      <a href="about.html" 
+   style="display:inline-block; width:150px; border-radius:70px; padding:10px; background:#0F4C81; color:white; text-align:center; text-decoration:none; font-weight:bolder; font-size:15px;">
+  Partner with Us
+</a>
+
+    </div>
+    
+  </div>
+
+  <main class="container" >
+    <h2>Find the Right Creator. Every Time.</h2>
+    <p class="lead">Credify gives you a transparent, data-driven way to identify creators who align with your brand and deliver real impact.</p>
+
+    <div class="row">
+      <div class="card">
+        <h4>Verified Credibility</h4>
+        <p>Every score is backed by real, visible engagement data — so you can trust the numbers.</p>
+      </div>
+      <div class="card">
+        <h4>Faster Shortlisting</h4>
+        <p>Filter creators by score, niche and audience match to rapidly create a shortlist.</p>
+      </div>
+      <div class="card">
+        <h4>Risk-Free Partnerships</h4>
+        <p>Avoid fake followers and false metrics — make safer investments in creators who perform.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:18px">
+      <h4 style="color:var(--primary)">Brand logos</h4>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:10px">
+        <img src="01.jpg" alt="brand" style="height:40px;opacity:.95">
+        <img src="02.jpg" alt="brand" style="height:40px;opacity:.95">
+        <img src="03.jpg" alt="brand" style="height:40px;opacity:.95">
+      </div>
+    </div>
+
+    <div class="nav-row" style="margin-top:18px">
+      <a class="btn secondary" href="profile.html">← Previous</a>
+      <a class="btn" href="about.html">Next →</a>
+    </div>
+  </main>
+
+  
+ <button onclick="readEntirePage()" style="padding:10px 20px;background:#0F4C81;color:white;border:none;border-radius:6px;font-size:16px;font-weight:bold;margin-right:8px;">
+  🔊 Read Page
+</button>
+<button onclick="pauseSpeech()" style="padding:10px 20px;background:#555;color:white;border:none;border-radius:6px;font-size:16px;font-weight:bold;margin-right:8px;">
+  ⏸ Pause
+</button>
+<button onclick="resumeSpeech()" style="padding:10px 20px;background:#0A7D2A;color:white;border:none;border-radius:6px;font-size:16px;font-weight:bold;margin-right:8px;">
+  ▶ Resume
+</button>
+<button onclick="stopSpeech()" style="padding:10px 20px;background:#B22222;color:white;border:none;border-radius:6px;font-size:16px;font-weight:bold;">
+  ⏹ Stop
+</button>
+<footer class="footer">
+    <small>© 2025 CREDIFY — Trust. Transparency. Empowerment.</small>
+  </footer>
+<script>
+  let speech;
+
+  function readEntirePage() {
+    let text = document.body.innerText;
+    window.speechSynthesis.cancel(); // Stop any ongoing speech
+
+    speech = new SpeechSynthesisUtterance(text);
+    speech.lang = "en-US";
+    speech.rate = 1;
+    speech.pitch = 1;
+
+    window.speechSynthesis.speak(speech);
+  }
+
+  function pauseSpeech() {
+    if (window.speechSynthesis.speaking && !window.speechSynthesis.paused) {
+      window.speechSynthesis.pause();
+    }
+  }
+
+  function resumeSpeech() {
+    if (window.speechSynthesis.paused) {
+      window.speechSynthesis.resume();
+    }
+  }
+
+  function stopSpeech() {
+    window.speechSynthesis.cancel();
+  }
+</script>
+</body>
+</html>
+
+

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CREDIFY — Home</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="logo-removebg-preview.png" sizes="20x20" type="image/png">
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <a href="index.html"><img src="logo-removebg-preview.png" alt="Credify logo" style="height:28px;"></a>
+      <a href="index.html">Home</a>
+      <a href="calculate1.html">Calculate Score</a>
+      <a href="profile.html">LeaderBoard</a>
+      <a href="brands.html">For Brands</a>
+      <a href="about.html">About Us</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero" role="region" aria-label="Hero">
+      <h1 class="h-hero">Your Credibility, Measured & Made Visible</h1>
+      <p class="lead">We calculate your Social Credibility Score so brands know exactly who to trust — and creators know exactly how to grow.</p>
+      <div class="cta-row">
+        <a class="btn" href="calculate.html">Calculate Score</a>
+        <a class="btn secondary" href="profile.html">View Profile Template</a>
+      </div>
+    </section>
+
+    <section aria-label="How it works">
+      <h2 style="color:var(--primary);margin-top:10px">How It Works</h2>
+      <div class="row" role="list">
+        <div class="card" role="listitem">
+          <div style="display:flex;align-items:center">
+            <div class="icon"><img src="images/insta.jpg" alt="" width="50"></div>
+            <div>
+              <h4>Enter Your Social Data</h4>
+              <p>Input followers, engagement, posts and platform (e.g., Instagram).</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" role="listitem">
+          <div style="display:flex;align-items:center">
+            <div class="icon"><img src="images/network.jpg" alt="" width="50"></div>
+            <div>
+              <h4>We Calculate Your Score</h4>
+              <p>We weigh engagement, quality, and consistency to create a transparent score.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" role="listitem">
+          <div style="display:flex;align-items:center">
+            <div class="icon"><img src="images/badge.jpg" alt="" width="50"></div>
+            <div>
+              <h4>Get Your Badge & Insights</h4>
+              <p>Show a verified Credify badge to brands and download a short report.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="nav-row" style="margin-top:30px">
+      <a class="btn secondary" href="philosophy.html">Our Philosophy</a>
+      <a class="btn" href="calculate.html">Next: Calculate →</a>
+    </div>
+  </main>
+
+  
+ <button onclick="readEntirePage()" style="padding:10px 20px;background:#0F4C81;color:white;border:none;border-radius:6px;font-size:16px;font-weight:bold;margin-right:8px;">
+  🔊 Read Page
+</button>
+<button onclick="pauseSpeech()" style="padding:10px 20px;background:#555;color:white;border:none;border-radius:6px;font-size:16px;font-weight:bold;margin-right:8px;">
+  ⏸ Pause
+</button>
+<button onclick="resumeSpeech()" style="padding:10px 20px;background:#0A7D2A;color:white;border:none;border-radius:6px;font-size:16px;font-weight:bold;margin-right:8px;">
+  ▶ Resume
+</button>
+<button onclick="stopSpeech()" style="padding:10px 20px;background:#B22222;color:white;border:none;border-radius:6px;font-size:16px;font-weight:bold;">
+  ⏹ Stop
+</button>
+<footer class="footer">
+    <small>© 2025 CREDIFY — Trust. Transparency. Empowerment.</small>
+  </footer>
+<script>
+  let speech;
+
+  function readEntirePage() {
+    let text = document.body.innerText;
+    window.speechSynthesis.cancel(); // Stop any ongoing speech
+
+    speech = new SpeechSynthesisUtterance(text);
+    speech.lang = "en-US";
+    speech.rate = 1;
+    speech.pitch = 1;
+
+    window.speechSynthesis.speak(speech);
+  }
+
+  function pauseSpeech() {
+    if (window.speechSynthesis.speaking && !window.speechSynthesis.paused) {
+      window.speechSynthesis.pause();
+    }
+  }
+
+  function resumeSpeech() {
+    if (window.speechSynthesis.paused) {
+      window.speechSynthesis.resume();
+    }
+  }
+
+  function stopSpeech() {
+    window.speechSynthesis.cancel();
+  }
+</script>
+
+</body>
+</html>
+

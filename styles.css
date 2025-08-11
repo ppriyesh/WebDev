@@ -1,0 +1,226 @@
+/* styles.css - CREDIFY final (uses images from /images/) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root{
+  --primary:#0F4C81;
+  --secondary:#0FA67A;
+  --muted:#7f8c93;
+  --bg:#FBFCFD;
+  --card:#fff;
+  --text:#102230;
+  --accent:#FFE082;
+  --shadow: 0 10px 40px rgba(16,34,48,0.08);
+  --indicator-height: 14px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);line-height:1.5;font-size:16px;opacity:0;animation:bodyFade .45s ease forwards;}
+@keyframes bodyFade{to{opacity:1}}
+
+.header{background:linear-gradient(90deg,var(--primary),rgba(15,76,129,0.85));padding:14px 28px;box-shadow:var(--shadow);position:sticky;top:0;z-index:100}
+.nav{max-width:1150px;margin:0 auto;display:flex;gap:18px;align-items:center;justify-content:center;flex-wrap:wrap}
+.nav a{color:#fff;text-decoration:none;padding:8px 10px;border-radius:8px;font-weight:600;transition:all .18s}
+.nav a:hover{transform:translateY(-3px);background:rgba(255,255,255,0.04)}
+
+.container{max-width:1100px;margin:44px auto;padding:0 20px;text-align:center;animation:fadeUp .6s ease both}
+@keyframes fadeUp{from{transform:translateY(14px);opacity:0}to{transform:translateY(0);opacity:1}}
+
+.h-hero{font-size:2.4rem;font-weight:700;color:var(--primary);margin-bottom:10px}
+.lead{color:var(--muted);font-size:1.05rem;margin-bottom:18px}
+
+.hero {
+  background-image: url('images/hero.jpg');
+  background-size:cover;
+  background-position:center;
+  border-radius:14px;
+  padding:56px 20px;
+  color:#fff;
+  margin-bottom:24px;
+  box-shadow: var(--shadow);
+  position:relative;
+}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(3,15,30,0.15), rgba(3,15,30,0.45));border-radius:14px;pointer-events:none}
+
+.cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+.btn{display:inline-block;background:linear-gradient(90deg,var(--primary), #0e6aa8);color:#fff;padding:.9rem 1.3rem;border-radius:999px;border:none;cursor:pointer;text-decoration:none;font-weight:600;box-shadow:0 12px 30px rgba(15,76,129,0.12);transition:transform .18s ease}
+.btn.secondary{background:transparent;color:var(--primary);border:1px solid rgba(15,76,129,0.06);box-shadow:none}
+.btn:hover{transform:translateY(-4px)}
+
+.row{display:flex;gap:18px;justify-content:center;align-items:flex-start;flex-wrap:wrap;margin-top:22px}
+.card{background:var(--card);border-radius:14px;padding:18px;width:320px;box-shadow:var(--shadow);text-align:left;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-6px);box-shadow:0 22px 60px rgba(16,34,48,0.12)}
+.card h4{color:var(--primary);margin-bottom:8px}
+.card p{color:var(--muted);font-size:0.95rem}
+.icon{width:60px;height:60px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(180deg, rgba(15,76,129,0.06), rgba(15,166,122,0.03));margin-right:12px}
+
+/* form */
+.form-card{max-width:580px;margin:14px auto;padding:22px;border-radius:12px;background:var(--card);box-shadow:var(--shadow);text-align:left}
+label{display:block;font-weight:600;margin-top:12px;color:var(--primary);font-size:.95rem}
+.input, select{width:100%;padding:10px 12px;margin-top:8px;border-radius:10px;border:1px solid #e6eef3;background:linear-gradient(180deg,#fff,#fbfdff);font-size:1rem}
+.checkbox-row{margin-top:12px;display:flex;align-items:center;gap:10px;color:var(--muted)}
+
+/* result card */
+.result-card{margin-top:14px;padding:14px;border-radius:10px;background:linear-gradient(90deg, rgba(15,166,122,0.06), rgba(15,76,129,0.03));border:1px solid rgba(15,166,122,0.06);display:flex;justify-content:space-between;align-items:center;gap:12px}
+.score{font-weight:700;font-size:1.3rem;color:var(--primary)}
+.tier{font-weight:700;color:var(--secondary);}
+
+/* indicator (god -> poor) */
+.indicator-wrap{margin-top:18px;max-width:760px;margin-left:auto;margin-right:auto;text-align:left}
+.indicator-bar{display:flex;height:var(--indicator-height);border-radius:999px;overflow:hidden;border:1px solid rgba(16,34,48,0.06)}
+.indicator-seg{flex:1;height:100%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:#fff;opacity:0.95}
+.seg-god{background:linear-gradient(90deg,#2ecc71,#10b37b)}   /* green */
+.seg-excellent{background:linear-gradient(90deg,#3bd0a6,#0fa67a)} 
+.seg-average{background:linear-gradient(90deg,#ffd166,#ffb34d)}    /* amber */
+.seg-low{background:linear-gradient(90deg,#ff7b7b,#ff5a5a)} 
+.seg-poor{background:linear-gradient(90deg,#d9534f,#a71d2a)}      /* red */
+
+/* pointer */
+.indicator-pointer{position:relative;margin-top:8px;height:6px}
+.pointer-dot{width:14px;height:14px;border-radius:50%;background:var(--primary);position:relative;left:0;transition:left .6s cubic-bezier(.2,.9,.3,1);transform:translateX(-50%);box-shadow:0 6px 18px rgba(15,76,129,0.18)}
+
+/* profile card */
+.profile-card{max-width:900px;margin:16px auto;padding:20px;border-radius:14px;background:var(--card);box-shadow:var(--shadow);display:flex;gap:20px;align-items:center}
+.profile-left{width:190px;display:flex;flex-direction:column;align-items:center;gap:12px}
+.avatar{width:140px;height:120px;border-radius:14px;object-fit:cover;border:6px solid rgba(15,166,122,0.06)}
+.profile-right{flex:1;text-align:left}
+.profile-right h3{margin-bottom:6px;color:var(--primary);font-size:1.2rem}
+.profile-right p{color:var(--muted);margin-bottom:6px}
+
+/* modal */
+.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(5,12,18,0.48);padding:20px;z-index:1200}
+.modal.show{display:flex}
+.modal-box{width:100%;max-width:480px;background:var(--card);padding:20px;border-radius:12px;box-shadow:0 20px 50px rgba(8,16,30,0.25);animation:modalIn .28s cubic-bezier(.2,.9,.3,1)}
+@keyframes modalIn{from{transform:translateY(18px) scale(.98);opacity:0}to{transform:translateY(0);opacity:1}}
+.modal-title{font-size:1.1rem;color:var(--primary);margin-bottom:8px}
+.modal-text{color:var(--muted);margin-bottom:14px}
+.modal-actions{display:flex;gap:12px;justify-content:flex-end}
+
+/* responsive */
+@media (max-width:900px){
+  .profile-card{flex-direction:column;text-align:center}
+  .profile-right{text-align:center}
+  .row{flex-direction:column;align-items:center}
+  .card{width:100%}
+  .indicator-wrap{padding:0 10px}
+}
+
+/* ===== Calculator Score Bar ===== */
+.score-bar-container {
+  background: #ddd;
+  border-radius: 10px;
+  height: 20px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+.score-bar-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 10px;
+  transition: width 1s ease-in-out, background-color 0.5s ease;
+}
+
+/* ===== Request Email Button ===== */
+#request-email {
+  background: #1b5e20;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  margin-top: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+}
+#request-email:hover {
+  background: #144d16;
+}
+
+/* ===== Modal ===== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  text-align: center;
+  position: relative;
+}
+.close-btn {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  color: red;
+}
+.error {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+
+/* ===== Form & Input Consistency ===== */
+.form-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+}
+
+.calc-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  background: #111;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.calc-form label {
+  margin-top: 12px;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.calc-form input, 
+.calc-form select {
+  padding: 8px;
+  border: 1px solid #333;
+  border-radius: 6px;
+  background: #222;
+  color: white;
+  font-size: 14px;
+}
+
+.calc-form button {
+  margin-top: 20px;
+  background: var(--primary);
+  border: none;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.calc-form button:hover {
+  background: #ff8844; /* Adjust hover color */
+}

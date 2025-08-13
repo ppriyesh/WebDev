@@ -2,165 +2,75 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>CREDIFY — Behind the Design</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <title>CREDIFY — Philosophy</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
   <style>
-    :root {
-      --primary: #0077cc;
-      --muted: #555;
-      --bg-light: #fff;
-      --accent-green: #28a745;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: var(--bg-light);
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    header.header {
-      background: var(--bg-light);
-      padding: 12px 20px;
-      border-bottom: 1px solid #ddd;
-    }
-
-    nav.nav {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    nav.nav a {
-      text-decoration: none;
-      color: var(--primary);
-      font-weight: 500;
-    }
-
-    nav.nav a:hover {
-      text-decoration: underline;
-    }
-
-    main.container {
+    .container {
       max-width: 900px;
-      margin: auto;
-      padding: 20px;
+      margin: 12px auto;
+      padding: 0 16px;
     }
-
-    h2 {
-      color: var(--primary);
-      margin-bottom: 10px;
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
     }
-
-    h3 {
-      color: var(--primary);
-      margin-top: 24px;
+    .table th, .table td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
     }
-
-    p, li {
-      color: var(--muted);
-    }
-
-    ul {
-      margin-left: 18px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 8px 16px;
-      background: var(--primary);
+    .table th {
+      background-color: var(--primary);
       color: white;
-      text-decoration: none;
-      border-radius: 4px;
-      transition: background 0.2s ease;
     }
-
-    .btn:hover {
-      background: #005fa3;
+    .checklist-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
     }
-
-    .btn.secondary {
-      background: #ccc;
-      color: black;
+    .checklist-table th, .checklist-table td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
     }
-
-    .btn.secondary:hover {
-      background: #aaa;
+    .checklist-table th {
+      background-color: var(--primary);
+      color: white;
+      text-align: center;
     }
-
+    .checklist-table td:first-child {
+      font-weight: bold;
+    }
     .nav-row {
       display: flex;
       justify-content: space-between;
-      margin-top: 24px;
-      flex-wrap: wrap;
+      align-items: center;
+      margin-top: 18px;
     }
-
-    footer.footer {
-      text-align: center;
-      padding: 12px;
-      border-top: 1px solid #ddd;
-      font-size: 0.9em;
-      color: var(--muted);
-      margin-top: 40px;
-    }
-
-    /* Table Styles */
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 16px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      overflow: hidden;
+    .btn {
+      padding: 8px 16px;
       border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
     }
-
-    table th, table td {
-      border: 1px solid #eee;
-      padding: 10px;
-      text-align: left;
+    .btn.secondary {
+      background-color: transparent;
+      color: var(--primary);
+      border: 1px solid var(--primary);
     }
-
-    table th {
-      background: var(--primary);
-      color: white;
-      font-weight: 600;
+    .btn.secondary:hover {
+      background-color: rgba(0, 123, 255, 0.1);
     }
-
-    table tr:nth-child(even) {
-      background: #f9f9f9;
-    }
-
-    /* Responsive Tables */
-    @media (max-width: 600px) {
-      table, thead, tbody, th, td, tr {
-        display: block;
-        width: 100%;
+    @media (min-width: 768px) {
+      .container {
+        display: flex;
+        flex-direction: column;
       }
-      table tr {
-        margin-bottom: 12px;
-        border: 1px solid #ddd;
-        border-radius: 6px;
-        padding: 6px;
-      }
-      table td {
-        border: none;
-        position: relative;
-        padding-left: 50%;
-        text-align: left;
-      }
-      table td::before {
-        content: attr(data-label);
-        position: absolute;
-        left: 12px;
-        top: 8px;
-        font-weight: bold;
-        color: var(--primary);
-      }
-      table th {
-        display: none;
+      .checklist-table {
+        display: table;
       }
     }
   </style>
@@ -179,117 +89,273 @@
 
   <main class="container">
     <h2>Behind the Design – The Credify Story</h2>
+    
+    <h3 style="margin-top:18px;color:var(--primary)">The Idea</h3>
+    <p style="color:var(--muted)">In today’s digital economy, credibility is currency. Brands want to know exactly which creators they can trust, and creators want to prove their worth in a way that is measurable and recognised. Credify bridges this gap by calculating a Social Credibility Score based on real engagement, content quality, and authenticity — and making it visible to both creators and brands.</p>
 
-    <!-- Stakeholder Table -->
-    <h3>Stakeholders</h3>
-    <p>Our platform benefits multiple stakeholders. Here’s how:</p>
-    <table>
-      <thead>
-        <tr>
-          <th>Stakeholder</th>
-          <th>Role</th>
-          <th>Benefit</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td data-label="Stakeholder">Credify</td>
-          <td data-label="Role">Score Evaluator</td>
-          <td data-label="Benefit">Establishes credibility scoring standards</td>
-        </tr>
-        <tr>
-          <td data-label="Stakeholder">Influencer</td>
-          <td data-label="Role">Score Holder</td>
-          <td data-label="Benefit">Gets insights to improve credibility and attract brands</td>
-        </tr>
-        <tr>
-          <td data-label="Stakeholder">Brand</td>
-          <td data-label="Role">Score Beneficiary</td>
-          <td data-label="Benefit">Identifies trustworthy influencers for collaborations</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <!-- Your Original Content -->
-    <h3>The Idea</h3>
-    <p>In today’s digital economy, credibility is currency. Brands want to know exactly which creators they can trust, and creators want to prove their worth in a way that is measurable and recognised. Credify bridges this gap by calculating a Social Credibility Score based on real engagement, content quality, and authenticity — and making it visible to both creators and brands.</p>
-
-    <h3>Why We Designed the Website This Way</h3>
-    <ul>
-      <li><strong>Minimalist Layout</strong> – Focus on score and insights without distraction.</li>
-      <li><strong>Clean Typography & White Space</strong> – Easier reading, builds trust.</li>
-      <li><strong>Interactive Transparency</strong> – Hover effects and tooltips explain metrics without overload.</li>
-      <li><strong>Data-First Design</strong> – Badges, charts, and progress bars make credibility tangible.</li>
+    <h3 style="margin-top:18px;color:var(--primary)">Why We Designed the Website This Way</h3>
+    <p style="color:var(--muted)">Every element of our site is intentional. Our design goals were:</p>
+    <ul style="color:var(--muted);margin-left:18px">
+      <li>Minimalist Layout – We want users to focus on their score and insights, not be distracted by clutter.</li>
+      <li>Clean Typography & Plenty of White Space – Easier reading, more trust.</li>
+      <li>Interactive Transparency – Hover effects and tooltips explain each metric without overloading the page.</li>
+      <li>Data-First Design – Badges, charts, and progress bars make credibility tangible.</li>
     </ul>
 
-    <h3>Our Colour Theme</h3>
-    <p><strong>Blue</strong> – Trust, stability, reliability.<br>
-       <strong>White</strong> – Transparency and openness.<br>
-       <strong>Green Accents</strong> – Growth and opportunity.</p>
-    <p>We avoided overly bright or chaotic palettes because credibility is built on clarity and confidence, not noise.</p>
+    <h3 style="margin-top:18px;color:var(--primary)">Our Colour Theme</h3>
+    <p style="color:var(--muted)">Our colours aren’t just for looks — they communicate what we stand for:</p>
+    <ul style="color:var(--muted);margin-left:18px">
+      <li>Blue – Trust, stability, reliability — the foundation of our credibility scoring system.</li>
+      <li>White – Transparency and openness — every score is backed by verifiable data.</li>
+      <li>Green Accents – Growth and opportunity — representing the collaborations and brand deals our users can achieve.</li>
+    </ul>
+    <p style="color:var(--muted)">We avoided overly bright or chaotic palettes because credibility is built on clarity and confidence, not noise.</p>
 
-    <h3>Our Logo</h3>
-    <p>The segmented circular ring represents measurement, progress, and the range of credibility. The gradient shift visualises improvement. The green “CREDIFY” text symbolises growth built on trust.</p>
-
-    <h3>Why We Have a Past Partners Moving Slidebar</h3>
-    <p>Trust is best shown, not just told. A moving slidebar of partner logos provides instant social proof, draws attention without overpowering, and reassures both creators and brands.</p>
-
-    <h3>Why We Have a Separate Leaderboard Tab</h3>
-    <ul>
-      <li><strong>Gamification</strong> – Motivates creators.</li>
-      <li><strong>Brand Efficiency</strong> – Quick way for brands to find high-credibility creators.</li>
-      <li><strong>Community Building</strong> – Builds healthy competitive spirit.</li>
-      <li><strong>Focus</strong> – Keeps leaderboard from overshadowing main goal.</li>
+    <h3 style="margin-top:18px;color:var(--primary)">Our Logo</h3>
+    <p style="color:var(--muted)">Our logo tells a story:</p>
+    <ul style="color:var(--muted);margin-left:18px">
+      <li>The segmented circular ring represents measurement, progress, and the range of credibility from low to high.</li>
+      <li>The gradient shift (red/orange to green) visualises improvement — every creator can move upward with authentic engagement.</li>
+      <li>The green “CREDIFY” text symbolises the ultimate goal: growth built on trust.</li>
     </ul>
 
-    <h3>Why We Highlight the Top 3 Profiles</h3>
-    <ul>
-      <li><strong>Visual Impact</strong> – Instant attention.</li>
-      <li><strong>Aspirational Value</strong> – Shows what success looks like.</li>
-      <li><strong>Fast Brand Decisions</strong> – Brands can start with the top 3.</li>
-      <li><strong>Prestige</strong> – Being in top 3 is a badge of honour.</li>
+    <h3 style="margin-top:18px;color:var(--primary)">Why We Have a Past Partners Moving Slidebar</h3>
+    <p style="color:var(--muted)">Trust is best shown, not just told.</p>
+    <ul style="color:var(--muted);margin-left:18px">
+      <li>A moving slidebar of past partner logos serves as instant social proof — showing new visitors that reputable brands already trust Credify.</li>
+      <li>The motion draws attention without overpowering the main content, keeping the homepage dynamic yet professional.</li>
+      <li>It reassures both creators (“Brands are here”) and brands (“Creators worth trusting use this platform”).</li>
     </ul>
 
-    <h3>Why We Provide Detailed Reports Without Revealing the Formula</h3>
-    <p>We keep the scoring formula secret to prevent manipulation but share category-level scores so brands and creators know where they stand.</p>
-    <p>Example report:</p>
-    <ul>
+    <h3 style="margin-top:18px;color:var(--primary)">Why We Have a Separate Leaderboard Tab</h3>
+    <p style="color:var(--muted)">The leaderboard is more than a ranking — it’s a recognition platform:</p>
+    <ul style="color:var(--muted);margin-left:18px">
+      <li>Gamification – Motivates creators to improve their metrics.</li>
+      <li>Brand Efficiency – Gives brands a quick way to find high-credibility creators.</li>
+      <li>Community Building – Public recognition builds a healthy competitive spirit.</li>
+      <li>Focus – Keeping it in a separate tab ensures the leaderboard doesn’t overshadow the broader purpose of credibility building.</li>
+    </ul>
+
+    <h3 style="margin-top:18px;color:var(--primary)">Why We Highlight the Top 3 Profiles</h3>
+    <p style="color:var(--muted)">In the leaderboard, the top 3 profiles get special focus because:</p>
+    <ul style="color:var(--muted);margin-left:18px">
+      <li>Visual Impact – Larger, prominent display captures attention instantly.</li>
+      <li>Aspirational Value – Shows others exactly what success looks like on Credify.</li>
+      <li>Fast Brand Decisions – Brands in a hurry can start with the top 3.</li>
+      <li>Prestige – Being in the top 3 becomes a badge of honour.</li>
+    </ul>
+
+    <h3 style="margin-top:18px;color:var(--primary)">Why We Provide Detailed Reports Without Revealing the Formula</h3>
+    <p style="color:var(--muted)">Our scoring system is proprietary — keeping the exact formula secret prevents manipulation and protects our intellectual property. However, we also believe in actionable transparency:</p>
+    <ul style="color:var(--muted);margin-left:18px">
+      <li>We share category-level scores (e.g., Engagement Quality, Audience Authenticity, Content Consistency, Brand Fit) so both brands and creators know where strengths and weaknesses lie.</li>
+      <li>We do not reveal the exact weights or calculations, ensuring fairness.</li>
+      <li>For Brands – They can see whether a creator’s audience is genuine, their content is consistent, and their engagement is high.</li>
+      <li>For Creators – They get clear feedback on what to improve without being able to “game the system.”</li>
+    </ul>
+    <p style="color:var(--muted)">Example report format:</p>
+    <ul style="color:var(--muted);margin-left:18px">
       <li>Engagement Quality – 7.8/10 (Strong)</li>
       <li>Audience Authenticity – 6.4/10 (Needs Improvement)</li>
       <li>Content Consistency – 8.2/10 (Excellent)</li>
       <li>Brand Fit – 7.0/10 (Good)</li>
     </ul>
+    <p style="color:var(--muted)">This approach builds trust while protecting the integrity of the score.</p>
 
-    <h3>Our Philosophy</h3>
-    <ul>
-      <li><strong>Transparency over secrecy</strong> – Show factors, not just scores.</li>
-      <li><strong>Empowerment over gatekeeping</strong> – Give creators tools to grow.</li>
-      <li><strong>Authenticity over hype</strong> – Reward real engagement.</li>
-    </ul>
-    <p>Our mission is to become the global standard of trust in the creator economy.</p>
+    <h3 style="margin-top:18px;color:var(--primary)">Stakeholders</h3>
+    <table class="table">
+      <thead><tr><th>Stakeholder</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td>Credify</td><td>The platform giving a credibility score.</td></tr>
+        <tr><td>Influencers</td><td>The creators who are being scored.</td></tr>
+        <tr><td>Brands</td><td>The businesses using the scores to find trustworthy creators.</td></tr>
+      </tbody>
+    </table>
 
-    <!-- Team Table -->
-    <h3>This Is Us</h3>
-    <table>
+    <h3 style="margin-top:18px;color:var(--primary)">Team</h3>
+    <table class="table">
+      <thead><tr><th>Name</th><th>Role</th><th>Roll No.</th></tr></thead>
+      <tbody>
+        <tr><td>Priyesh Pansari</td><td>Founder</td><td>IPM57M068</td></tr>
+        <tr><td>Aditya Vegad</td><td>Founder</td><td>IPM57M059</td></tr>
+      </tbody>
+    </table>
+    
+    <h3 style="margin-top:18px;color:var(--primary)">Project Requirements Checklist</h3>
+    <table class="checklist-table">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Roll Number</th>
+          <th>Requirement Category</th>
+          <th>Requirement</th>
+          <th>Status</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td data-label="Name">Priyesh Pansari</td>
-          <td data-label="Roll Number">IPM57M068</td>
+          <td rowspan="3">📋 Project Setup & Documentation</td>
+          <td>Table with team number, member names, roll numbers</td>
+          <td>Yes</td>
         </tr>
         <tr>
-          <td data-label="Name">Aditya Vegad</td>
-          <td data-label="Roll Number">IPM57M059</td>
+          <td>Stakeholders listed</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Submission</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td rowspan="6">🏗️ Core Technical Requirements</td>
+          <td>Stack: Use HTML, CSS, JavaScript</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Page Count: 5–6 main pages</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Semantic HTML: Use &lt;header&gt;, &lt;footer&gt;, &lt;nav&gt;, etc.</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Central CSS: Single global stylesheet</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Framework Use: Bootstrap (or approved alternative)</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>Accessible Forms & Validation</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td rowspan="3">🔒 Security & Configuration Files</td>
+          <td>Security.txt: At site root</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Robots.txt: At site root</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>HTTPS (SSL): Serve site securely</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td rowspan="8">🔐 Hidden/Instructors-only Page</td>
+          <td>Access Restriction: Instructor only</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>Handwritten HTML: No auto-generation</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Team Table: Members & roles listed</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Testimonial: Added</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Consumer Profile: Who are you catering to?</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>Design Philosophy: Written in the Hidden page</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Philosophy of logo: Documented reasoning behind logo design</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Survey: Survey for design</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td rowspan="4">🎨 Design & User Experience</td>
+          <td>Consistent Design: Uniform look & documented method</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Mobile Responsive: Works on phones & tablets</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Favicon: Add favicon</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Icons on Links: Icon for every navigation/action link</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td rowspan="5">♿ Accessibility & Performance</td>
+          <td>Accessibility: Screen-readable & accessible</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Performance: Optimized for fast rendering</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Images: Optimized image on every page</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Image Optimization: Documented</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Figure Labelling: "Lower is better" / "Higher is better"</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td rowspan="4">🔍 SEO & Marketing</td>
+          <td>SEO Keywords: Selected with reasoning</td>
+          <td>Somewhat</td>
+        </tr>
+        <tr>
+          <td>SEO Ranking Check: Recorded</td>
+          <td>Somewhat</td>
+        </tr>
+        <tr>
+          <td>Sitemap: HTML or XML created</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>Social Buttons: Implemented</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td rowspan="3">🚀 Hosting & Deployment</td>
+          <td>Public Availability: Site & code publicly accessible</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Public URL: For robots.txt provided</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Ngrok Hosting: Temporary testing via ngrok</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td rowspan="2">🎯 Special Features</td>
+          <td>Google Map: On "About Us" page</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>LinkedIn Profile Link: Optional</td>
+          <td>Yes</td>
         </tr>
       </tbody>
     </table>
-
-    <div class="nav-row">
+    
+    <div class="nav-row" style="margin-top:18px">
       <a class="btn secondary" href="about.html">← Previous</a>
       <a class="btn" href="index.html">Back to Home →</a>
     </div>
